@@ -361,8 +361,8 @@ case "${TOOL}" in
             godep go install -v "${FLAGS[@]}" ${pkgs} 2>&1
         else
             massagePkgSpecForVendor
-            step "Running: go install -v ${FLAGS[@]} ${pkgs}"
-            go install -v "${FLAGS[@]}" ${pkgs} 2>&1
+            step "make heroku"
+            make heroku
         fi
     ;;
     govendor)
@@ -384,8 +384,8 @@ case "${TOOL}" in
         fi
         massagePkgSpecForVendor
 
-        step "Running: go install -v ${FLAGS[@]} ${pkgs}"
-        go install -v "${FLAGS[@]}" ${pkgs} 2>&1
+        step "make heroku"
+        make heroku
     ;;
     glide)
         ensureGlide "${GlideVersion}"
@@ -408,8 +408,8 @@ case "${TOOL}" in
 
         massagePkgSpecForVendor
 
-        step "Running: go install -v ${FLAGS[@]} ${pkgs}"
-        go install -v "${FLAGS[@]}" ${pkgs} 2>&1
+        step "make heroku"
+        make heroku
     ;;
     gb)
         ensureGB "${GBVersion}"
